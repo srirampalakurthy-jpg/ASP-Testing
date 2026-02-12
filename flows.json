@@ -1385,5 +1385,47 @@
     "y": 100,
     "statusCode": "",
     "recStatus": "active"
+  },
+  {
+    "id": "flow_asp_unique_001",
+    "type": "tab",
+    "label": "ASP_Hello_UI_Flow_Unique",
+    "disabled": false,
+    "info": "Simple POST API returning Hello New UI of ASP"
+  },
+  {
+    "id": "httpin_asp_unique_001",
+    "type": "http in",
+    "z": "flow_asp_unique_001",
+    "name": "ASP Unique POST API",
+    "url": "/aspHelloUnique",
+    "method": "post",
+    "upload": false,
+    "x": 200,
+    "y": 120,
+    "wires": [["function_asp_unique_001"]]
+  },
+  {
+    "id": "function_asp_unique_001",
+    "type": "function",
+    "z": "flow_asp_unique_001",
+    "name": "Return ASP Unique Message",
+    "func": "// Unique function node logic\nmsg.payload = {\n    message: \"Hello New UI of ASP\"\n};\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 450,
+    "y": 120,
+    "wires": [["httpresponse_asp_unique_001"]]
+  },
+  {
+    "id": "httpresponse_asp_unique_001",
+    "type": "http response",
+    "z": "flow_asp_unique_001",
+    "name": "Send ASP Response",
+    "statusCode": "",
+    "headers": {},
+    "x": 700,
+    "y": 120,
+    "wires": []
   }
 ]
