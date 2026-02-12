@@ -7,7 +7,7 @@
   "accessType": "public",
   "status": "deployed",
   "recStatus": "active",
-  "version": "1.6",
+  "version": "1.7",
   "resourceLimits": {
     "tables": {
       "threshold": 45,
@@ -38,5 +38,5 @@
     }
   },
   "dependentApps": [],
-  "lastDeployedAt": 1770886692781
+  "lastDeployedAt": 1770886952469
 }
