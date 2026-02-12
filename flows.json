@@ -874,5 +874,40 @@
     "operationLevel": "collection",
     "useModel": false,
     "modelName": ""
+  },
+  {
+    "id": "httpin_simple",
+    "type": "http in",
+    "z": "flow1",
+    "name": "ASP Simple POST",
+    "url": "/aspSimple",
+    "method": "post",
+    "upload": false,
+    "x": 180,
+    "y": 120,
+    "wires": [["function_simple"]]
+  },
+  {
+    "id": "function_simple",
+    "type": "function",
+    "z": "flow1",
+    "name": "Return ASP Message",
+    "func": "// Function node logic\nmsg.payload = {\n    message: \"Hello New UI of ASP\"\n};\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 420,
+    "y": 120,
+    "wires": [["httpresponse_simple"]]
+  },
+  {
+    "id": "httpresponse_simple",
+    "type": "http response",
+    "z": "flow1",
+    "name": "Send Response",
+    "statusCode": "",
+    "headers": {},
+    "x": 660,
+    "y": 120,
+    "wires": []
   }
 ]
